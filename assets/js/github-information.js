@@ -43,6 +43,8 @@ function repoInformationHTML() {
 
 /* Using jquery 'when' and 'then' to create a promise*/ 
 function fetchGitHubInformation(event) {
+    $("#gh-user-data").html("");
+    $("#gh-repo-data").html("");
     const username = $('#gh-username').val();
     if(!username) {
         $('#gh-user-data').html(`<h2>Please enter a GitHub username</h2>`);
@@ -73,3 +75,5 @@ function fetchGitHubInformation(event) {
                 }
             })
 }
+
+$(document).ready(fetchGitHubInformation);
